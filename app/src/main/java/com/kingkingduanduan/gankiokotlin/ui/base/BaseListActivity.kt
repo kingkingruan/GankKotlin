@@ -1,4 +1,4 @@
-package com.kingkingduanduan.gankiokotlin.base
+package com.kingkingduanduan.gankiokotlin.ui.base
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

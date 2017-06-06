@@ -1,4 +1,4 @@
-package com.huijieiou.ui.fragment
+package com.kingkingduanduan.gankiokotlin.ui.fragment
 
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.huijieiou.comp.network.GankResponse
-import com.huijieiou.utils.CommonUtil
-import com.huijieiou.utils.RxUtil
 import com.kingkingduanduan.gankiokotlin.R
-import com.kingkingduanduan.gankiokotlin.base.BaseFragment
 import com.kingkingduanduan.gankiokotlin.comp.network.CommonObserver
+import com.kingkingduanduan.gankiokotlin.comp.network.GankResponse
 import com.kingkingduanduan.gankiokotlin.model.DataItem
 import com.kingkingduanduan.gankiokotlin.ui.WebActivity
+import com.kingkingduanduan.gankiokotlin.ui.base.BaseFragment
+import com.kingkingduanduan.gankiokotlin.utils.CommonUtil
+import com.kingkingduanduan.gankiokotlin.utils.RxUtil
 
 /**
  * Created by ruanjinjing on 2017/6/1.

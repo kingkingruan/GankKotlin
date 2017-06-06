@@ -1,4 +1,4 @@
-package com.kingkingduanduan.gankiokotlin.base
+package com.kingkingduanduan.gankiokotlin.ui.base
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

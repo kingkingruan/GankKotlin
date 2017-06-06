@@ -1,6 +1,5 @@
 package com.kingkingduanduan.gankiokotlin.comp.network
 
-import com.huijieiou.comp.network.GankResponse
 import com.kingkingduanduan.gankiokotlin.BuildConfig
 import com.kingkingduanduan.gankiokotlin.app.AppConstant
 import com.kingkingduanduan.gankiokotlin.model.DataItem

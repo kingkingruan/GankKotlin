@@ -1,4 +1,4 @@
-package com.huijieiou.comp.network
+package com.kingkingduanduan.gankiokotlin.comp.network
 
 import com.google.gson.annotations.SerializedName
 

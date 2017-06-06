@@ -1,4 +1,4 @@
-package com.huijieiou.utils
+package com.kingkingduanduan.gankiokotlin.utils
 
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers

@@ -1,4 +1,4 @@
-package com.kingkingduanduan.gankiokotlin.base
+package com.kingkingduanduan.gankiokotlin.ui.base
 
 import android.content.Intent
 import android.os.Bundle

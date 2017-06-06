@@ -1,4 +1,4 @@
-package com.huijieiou.utils
+package com.kingkingduanduan.gankiokotlin.utils
 
 import java.text.SimpleDateFormat
 import java.util.*

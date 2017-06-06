@@ -1,4 +1,4 @@
-package com.kingkingduanduan.gankiokotlin.ui
+package com.kingkingduanduan.gankiokotlin.ui.fragment
 
 import android.os.Build
 import android.view.View
@@ -6,7 +6,7 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.kingkingduanduan.gankiokotlin.R
-import com.kingkingduanduan.gankiokotlin.base.BaseFragment
+import com.kingkingduanduan.gankiokotlin.ui.base.BaseFragment
 
 /**
  * Created by ruanjinjing on 2017/6/5.

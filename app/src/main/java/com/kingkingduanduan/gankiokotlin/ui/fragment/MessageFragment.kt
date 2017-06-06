@@ -2,7 +2,7 @@ package com.kingkingduanduan.gankiokotlin.ui.fragment
 
 import android.view.View
 import com.kingkingduanduan.gankiokotlin.R
-import com.kingkingduanduan.gankiokotlin.base.BaseFragment
+import com.kingkingduanduan.gankiokotlin.ui.base.BaseFragment
 
 /**
  * Created by ruanjinjing on 2017/6/5.

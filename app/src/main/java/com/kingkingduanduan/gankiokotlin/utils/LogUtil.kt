@@ -1,4 +1,4 @@
-package com.huijieiou.utils
+package com.kingkingduanduan.gankiokotlin.utils
 
 import android.util.Log
 import com.kingkingduanduan.gankiokotlin.BuildConfig

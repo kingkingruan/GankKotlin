@@ -6,12 +6,9 @@ import android.support.v4.app.Fragment
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import ccom.kingkingduanduan.gankiokotlin.ui.fragment.MineFragment
-import com.huijieiou.ui.fragment.HomeFragment
 import com.kingkingduanduan.gankiokotlin.R
-import com.kingkingduanduan.gankiokotlin.base.BaseActivity
-import com.kingkingduanduan.gankiokotlin.fragment.DiscoveryFragment
-import com.kingkingduanduan.gankiokotlin.ui.fragment.MessageFragment
+import com.kingkingduanduan.gankiokotlin.ui.base.BaseActivity
+import com.kingkingduanduan.gankiokotlin.ui.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 

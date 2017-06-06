@@ -1,6 +1,5 @@
 package com.kingkingduanduan.gankiokotlin.comp.network
 
-import com.huijieiou.comp.network.GankResponse
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 

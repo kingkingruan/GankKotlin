@@ -2,7 +2,8 @@ package com.kingkingduanduan.gankiokotlin.ui
 
 import android.os.Bundle
 import com.kingkingduanduan.gankiokotlin.R
-import com.kingkingduanduan.gankiokotlin.base.BaseActivity
+import com.kingkingduanduan.gankiokotlin.ui.base.BaseActivity
+import com.kingkingduanduan.gankiokotlin.ui.fragment.WebFragment
 
 /**
  * Created by ruanjinjing on 2017/6/6.
