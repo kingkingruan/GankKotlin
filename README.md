@@ -3,10 +3,12 @@
 编码的时候基本都是通过查看 [官方中文文档](http://www.kotlincn.net/docs/reference/) 来写的，但个人感觉该中文文档适合做手册，适合碰到哪个知识点不清楚再去仔细看，而不适合作为学习的教程一点一点的去学习，建议前期通过个人博客的文章学习。  
 ## 截图
 <img src="https://github.com/kingkingruan/GankKotlin/blob/master/device-2017-06-07-160224.png" width="216" height="384"/>  
+  
 ## 使用到的相关library  
 * [Retrofit 2.0](http://square.github.io/retrofit/)  
 * [Gilde](https://github.com/bumptech/glide)  
 * [rxjava 2.0](https://github.com/ReactiveX/RxJava)  
+  
 ## 使用到相关的语法  
 * 更加简单的单例模式实现[(代码)](https://github.com/kingkingruan/GankKotlin/blob/master/app/src/main/java/com/kingkingduanduan/gankiokotlin/comp/network/ApiStore.kt)  
 * 内部类[(代码)](https://github.com/kingkingruan/GankKotlin/blob/master/app/src/main/java/com/kingkingduanduan/gankiokotlin/ui/fragment/DataFragment.kt)  
