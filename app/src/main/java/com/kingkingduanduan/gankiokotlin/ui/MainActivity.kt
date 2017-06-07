@@ -19,7 +19,7 @@ class MainActivity : BaseActivity() {
     }
 
     var tabs = arrayOfNulls<TabLayout.Tab>(4)
-    val fragments = arrayOf(HomeFragment(), WebFragment(), MessageFragment(), MineFragment())
+    val fragments = arrayOf(HomeFragment(), DataFragment(), MessageFragment(), MineFragment())
 
     var currentFragment: Fragment = fragments[0]
 
@@ -60,10 +60,10 @@ class MainActivity : BaseActivity() {
 
     fun initFragment() {
         val bundle = Bundle()
-        bundle.putString(WebFragment.EXTRA_URL, "http://gank.io/")
+        bundle.putString(DataFragment.EXTRA_TOPIC, "瞎推荐")
         fragments[1].arguments = bundle
         supportFragmentManager.beginTransaction().add(R.id.frameLayout, fragments[0], HomeFragment::class.simpleName)
-                .add(R.id.frameLayout, fragments[1], DiscoveryFragment::class.simpleName).hide(fragments[1])
+                .add(R.id.frameLayout, fragments[1], DataFragment::class.simpleName).hide(fragments[1])
                 .add(R.id.frameLayout, fragments[2], MessageFragment::class.simpleName).hide(fragments[2])
                 .add(R.id.frameLayout, fragments[3], MineFragment::class.simpleName).hide(fragments[3])
                 .commit()

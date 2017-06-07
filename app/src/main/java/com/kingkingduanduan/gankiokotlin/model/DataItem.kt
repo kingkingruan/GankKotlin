@@ -34,7 +34,7 @@ class DataItem {
     var used: Boolean = false
 
     @SerializedName("who")
-    lateinit var who: String
+    var who: String? = null
 
 
 }
