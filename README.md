@@ -6,7 +6,7 @@
 ## 使用到的相关library  
 * [Retrofit 2.0](http://square.github.io/retrofit/)  
 * [Gilde](https://github.com/bumptech/glide)  
-* [rxjava 2.0](https://github.com/ReactiveX/RxJava)
+* [rxjava 2.0](https://github.com/ReactiveX/RxJava)  
 ## 使用到相关的语法
 * 更加简单的单例模式实现[(代码)](https://github.com/kingkingruan/GankKotlin/blob/master/app/src/main/java/com/kingkingduanduan/gankiokotlin/comp/network/ApiStore.kt)  
 * 内部类[(代码)](https://github.com/kingkingruan/GankKotlin/blob/master/app/src/main/java/com/kingkingduanduan/gankiokotlin/ui/fragment/DataFragment.kt)  
