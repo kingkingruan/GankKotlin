@@ -17,6 +17,7 @@ import com.kingkingduanduan.gankiokotlin.ui.WebActivity
 import com.kingkingduanduan.gankiokotlin.ui.base.BaseFragment
 import com.kingkingduanduan.gankiokotlin.utils.CommonUtil
 import com.kingkingduanduan.gankiokotlin.utils.RxUtil
+import com.kingkingduanduan.gankiokotlin.utils.loadUrl
 
 /**
  * Created by ruanjinjing on 2017/6/1.
@@ -138,7 +139,7 @@ class DataFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
             when (p0) {
                 is ItemViewHolder -> {
                     p0?.title?.text = item?.des
-                    Glide.with(this@DataFragment).load(item?.images?.get(0)).into(p0?.image)
+                    p0?.image.loadUrl(this@DataFragment,item?.images?.get(0))
                     p0?.whoWhen?.text = "${item?.who ?: "匿名"} ${CommonUtil.formatTime(item?.publishedAt)}"
                     p0?.type?.text = item?.type
                     p0?.itemView?.setOnClickListener({ _ ->

@@ -8,18 +8,21 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.kingkingduanduan.gankiokotlin.R
 import com.kingkingduanduan.gankiokotlin.ui.base.BaseActivity
-import com.kingkingduanduan.gankiokotlin.ui.fragment.*
+import com.kingkingduanduan.gankiokotlin.ui.fragment.DataFragment
+import com.kingkingduanduan.gankiokotlin.ui.fragment.HomeFragment
+import com.kingkingduanduan.gankiokotlin.ui.fragment.MineFragment
+import com.kingkingduanduan.gankiokotlin.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity() {
     companion object {
-        private val TITLES = arrayOf("首页", "发现", "消息", "我的")
-        private val ICONS = arrayOf(R.drawable.tab_main_selector, R.drawable.tab_discovery_selector, R.drawable.tab_message_selector, R.drawable.tab_mine_selector)
+        private val TITLES = arrayOf("首页", "发现", "我的")
+        private val ICONS = arrayOf(R.drawable.tab_main_selector, R.drawable.tab_discovery_selector, R.drawable.tab_mine_selector)
     }
 
-    var tabs = arrayOfNulls<TabLayout.Tab>(4)
-    val fragments = arrayOf(HomeFragment(), DataFragment(), MessageFragment(), MineFragment())
+    var tabs = arrayOfNulls<TabLayout.Tab>(3)
+    val fragments = arrayOf(HomeFragment(), DataFragment(), MineFragment())
 
     var currentFragment: Fragment = fragments[0]
 
@@ -64,8 +67,7 @@ class MainActivity : BaseActivity() {
         fragments[1].arguments = bundle
         supportFragmentManager.beginTransaction().add(R.id.frameLayout, fragments[0], HomeFragment::class.simpleName)
                 .add(R.id.frameLayout, fragments[1], DataFragment::class.simpleName).hide(fragments[1])
-                .add(R.id.frameLayout, fragments[2], MessageFragment::class.simpleName).hide(fragments[2])
-                .add(R.id.frameLayout, fragments[3], MineFragment::class.simpleName).hide(fragments[3])
+                .add(R.id.frameLayout, fragments[2], MineFragment::class.simpleName).hide(fragments[2])
                 .commit()
         currentFragment = fragments[0]
     }
@@ -75,7 +77,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onClick(v: View?) {
-
+        toast("haha")
     }
 
 }

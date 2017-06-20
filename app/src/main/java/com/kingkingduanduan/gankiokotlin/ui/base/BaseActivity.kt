@@ -35,19 +35,8 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
     abstract fun initView()
     abstract fun initData()
 
-    protected fun showToast(@NotNull content: String) {
-        Toast.makeText(this, content, Toast.LENGTH_SHORT).show()
-    }
-
-    protected fun showToast(@StringRes res: Int) {
-        Toast.makeText(this, res, Toast.LENGTH_SHORT).show()
-    }
-
-    protected fun <T : Any> go(t: Class<T>) {
-        startActivity(Intent(this, t))
-    }
-
     override fun onClick(v: View?) {
+
     }
 
     override fun onResume() {

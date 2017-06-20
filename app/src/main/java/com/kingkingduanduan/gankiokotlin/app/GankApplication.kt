@@ -14,4 +14,5 @@ class GankApplication : Application() {
         super.onCreate()
         application = this
     }
+
 }
