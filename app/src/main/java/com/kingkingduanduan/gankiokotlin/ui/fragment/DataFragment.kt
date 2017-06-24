@@ -8,16 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.bumptech.glide.Glide
 import com.kingkingduanduan.gankiokotlin.R
 import com.kingkingduanduan.gankiokotlin.comp.network.CommonObserver
 import com.kingkingduanduan.gankiokotlin.comp.network.GankResponse
 import com.kingkingduanduan.gankiokotlin.model.DataItem
 import com.kingkingduanduan.gankiokotlin.ui.WebActivity
 import com.kingkingduanduan.gankiokotlin.ui.base.BaseFragment
-import com.kingkingduanduan.gankiokotlin.utils.CommonUtil
-import com.kingkingduanduan.gankiokotlin.utils.RxUtil
-import com.kingkingduanduan.gankiokotlin.utils.loadUrl
+import com.kingkingduanduan.gankiokotlin.utils.*
 
 /**
  * Created by ruanjinjing on 2017/6/1.
@@ -28,6 +25,7 @@ class DataFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
         val EXTRA_TOPIC = "extra_topic"
     }
 
+    //数据流根据是否有图片做展示风格的区分
     val TYPE_NORMAL = 1
     val TYPE_WITHOUT_PIC = 2
 
@@ -94,6 +92,7 @@ class DataFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
         requestData()
     }
 
+    //带图片
     inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView
         val image: ImageView
@@ -108,6 +107,7 @@ class DataFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
         }
     }
 
+    //不带图片
     inner class ItemWithOutPicViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var title: TextView
         var whoWhen: TextView
@@ -122,8 +122,8 @@ class DataFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
 
     inner class ItemAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         override fun getItemViewType(position: Int): Int {
-            val item = dataItemList?.get(position)
-            if (item?.images != null) {
+            val item = dataItemList[position]
+            if (item.images != null) {
                 return TYPE_NORMAL
             } else {
                 return TYPE_WITHOUT_PIC
@@ -131,31 +131,27 @@ class DataFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
         }
 
         override fun getItemCount(): Int {
-            return dataItemList?.size ?: 0
+            return dataItemList.size
         }
 
         override fun onBindViewHolder(p0: RecyclerView.ViewHolder?, p1: Int) {
             val item = dataItemList?.get(p1)
             when (p0) {
                 is ItemViewHolder -> {
-                    p0?.title?.text = item?.des
-                    p0?.image.loadUrl(this@DataFragment,item?.images?.get(0))
-                    p0?.whoWhen?.text = "${item?.who ?: "匿名"} ${CommonUtil.formatTime(item?.publishedAt)}"
-                    p0?.type?.text = item?.type
-                    p0?.itemView?.setOnClickListener({ _ ->
-                        val intent = Intent(activity, WebActivity::class.java)
-                        intent.putExtra(WebActivity.EXTRA_URL, item?.url)
-                        startActivity(intent)
+                    p0.title.text = item.des
+                    p0.image.loadUrl(this@DataFragment,item.images?.get(0))
+                    p0.whoWhen.text = "${item.who ?: "匿名"} ${CommonUtil.formatTime(item?.publishedAt)}"
+                    p0.type.text = item.type
+                    p0.itemView?.setOnClickListener({ _ ->
+                        go(Intent(activity, WebActivity::class.java).putExtra(WebActivity.EXTRA_URL, item.url))
                     })
                 }
                 is ItemWithOutPicViewHolder -> {
-                    p0?.title?.text = item?.des
-                    p0?.whoWhen?.text = "${item?.who ?: "匿名"} ${CommonUtil.formatTime(item?.publishedAt)}"
-                    p0?.type?.text = item?.type
-                    p0?.itemView?.setOnClickListener({ _ ->
-                        val intent = Intent(activity, WebActivity::class.java)
-                        intent.putExtra(WebActivity.EXTRA_URL, item?.url)
-                        startActivity(intent)
+                    p0.title.text = item.des
+                    p0.whoWhen.text = "${item.who ?: "匿名"} ${CommonUtil.formatTime(item.publishedAt)}"
+                    p0.type.text = item.type
+                    p0.itemView?.setOnClickListener({ _ ->
+                        go(Intent(activity, WebActivity::class.java).putExtra(WebActivity.EXTRA_URL, item.url))
                     })
                 }
             }
@@ -164,8 +160,8 @@ class DataFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
 
         override fun onCreateViewHolder(p0: ViewGroup?, p1: Int): RecyclerView.ViewHolder {
             when (p1) {
-                TYPE_NORMAL -> return ItemViewHolder(activity.layoutInflater.inflate(R.layout.item_data, null))
-                else -> return ItemWithOutPicViewHolder(activity.layoutInflater.inflate(R.layout.item_data_without_pic, null))
+                TYPE_NORMAL -> return ItemViewHolder(inflate(R.layout.item_data))
+                else -> return ItemWithOutPicViewHolder(inflate(R.layout.item_data_without_pic))
             }
         }
 

@@ -34,6 +34,10 @@ fun <T : Any> Activity.go(t: Class<T>) {
     startActivity(Intent(this, t))
 }
 
+fun Activity.go(intent: Intent) {
+    startActivity(intent)
+}
+
 fun Activity.inflate(@LayoutRes res: Int): View {
     return LayoutInflater.from(this).inflate(res, null)
 }
@@ -52,6 +56,10 @@ fun Fragment.toast(content: String, length: Int) {
 
 fun <T : Any> Fragment.go(t: Class<T>) {
     startActivity(Intent(context, t))
+}
+
+fun Fragment.go(intent: Intent) {
+    startActivity(intent)
 }
 
 fun Fragment.inflate(@LayoutRes res: Int): View {
